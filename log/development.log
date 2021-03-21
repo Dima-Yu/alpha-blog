@@ -9718,3 +9718,27 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 0.4ms | Allocations: 6239)
 
 
+Started GET "/articles" for ::1 at 2021-03-21 09:35:00 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:13
+  Rendered articles/index.html.erb within layouts/application (Duration: 18.0ms | Allocations: 7607)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 144)
+Completed 200 OK in 40ms (Views: 30.1ms | ActiveRecord: 1.7ms | Allocations: 15193)
+
+
+Started GET "/articles" for ::1 at 2021-03-21 09:35:01 +0200
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:13
+  Rendered articles/index.html.erb within layouts/application (Duration: 18.9ms | Allocations: 2741)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 18)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.5ms | Allocations: 6245)
+
+
