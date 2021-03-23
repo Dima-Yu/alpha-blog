@@ -1,5 +1,7 @@
 @import 'bootstrap/dist/css/bootstrap';
-
+@import 'layout/_footer';
+@import 'layout/_jumbotron';
+@import 'layout/_article_card';
 body {
   min-height: 100vh;
 }
@@ -11,6 +13,6 @@ body {
   min-height: 100vh;
 }
 
-.container {
+.container, .container-fluid {
   flex: 1;
 }
