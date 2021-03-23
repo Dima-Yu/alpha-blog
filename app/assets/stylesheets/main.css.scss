@@ -1,0 +1,16 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+body {
+  min-height: 100vh;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}

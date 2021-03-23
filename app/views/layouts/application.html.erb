@@ -11,6 +11,10 @@
 
   <body>
     <%= render 'layouts/messages' %>
-    <%= yield %>
+    <div id="app">
+      <%= render 'layouts/header' %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
