@@ -1,23 +1,28 @@
-- if @article.errors.any?
-  - @article.errors.full_messages.each do |msg|
-    p
-      = msg
+= render "shared/errors"
+
 = form_with(model: @article, local: true) do |f|
-  div
-    = f.label :author
-    br
-    = f.text_field :author
-  div
-    = f.label :title
-    br
-    = f.text_field :title
-  div
-    = f.label :description
-    br
-    = f.text_area :description
-  div
-    = f.label :text
-    br
-    = f.text_area :text
-  div
-    = f.submit
+  .row.mb-3
+    .col
+      = f.label :author, class: "col-form-label"
+    .col-10
+      = f.text_field :author, class: "form-control"
+  .row.mb-3
+    .col
+      = f.label :title
+    .col-10
+      = f.text_field :title, class: "form-control"
+  .row.mb-3
+    .col
+      = f.label :description
+    .col-10
+      = f.text_area :description, class: "form-control"
+  .row.mb-3
+    .col
+      = f.label :text
+    .col-10
+      = f.text_area :text, class: "form-control"
+  .row 
+    .col-12
+      .btn-group
+        = f.submit class: "btn btn-success"
+        = link_to 'Cancel', :back, class: "btn btn-outline-secondary"

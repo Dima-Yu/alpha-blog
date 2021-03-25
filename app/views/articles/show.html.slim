@@ -1,15 +1,27 @@
-.container
-  h1
-    | Article details
-  p
-    | Title: 
-    = @article.title
-  p
-    | Description: 
-    = @article.description
-  p
-    | Article text: 
-    = @article.text
-  = link_to "Edit", edit_article_path(@article)
-  |  | 
-  = link_to "Delete",  article_path(@article), method: :delete, data: { confirm: "Are you sure?" }
+.container.mt-3
+  h2 Article details
+  .row
+    .col-12
+      .card.article-card
+        .article-card--img
+          - # <img src="article.img" class="card-img-top" alt="">
+        .card-body
+          h5.card-title
+            = @article.title
+          .author
+            i
+              | Author: 
+              = @article.author
+            br
+            i
+              | Created: 
+              = time_ago_in_words(@article.created_at)
+              |  ago
+          .article-card--description
+            = @article.description
+          .article-card--text
+            = simple_format(@article.text)
+          .btn-group
+            = link_to "Edit", edit_article_path(@article), class: "btn btn-outline-success"
+            = link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger"
+            = link_to "Back", articles_path, class: "btn btn-outline-secondary"

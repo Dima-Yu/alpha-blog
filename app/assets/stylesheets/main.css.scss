@@ -1,9 +1,10 @@
-@import 'bootstrap/dist/css/bootstrap';
+@import 'bootstrap/scss/bootstrap';
 @import 'layout/_footer';
 @import 'layout/_jumbotron';
 @import 'layout/_article_card';
 body {
   min-height: 100vh;
+  background: $light;
 }
 
 #app {
@@ -15,4 +16,11 @@ body {
 
 .container, .container-fluid {
   flex: 1;
+}
+
+.default-block {
+  padding: 20px;
+  background: $white;
+  border: 1px solid $gray-300;
+  border-radius: 5px;
 }
