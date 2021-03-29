@@ -1,0 +1,23 @@
+= render "shared/errors", obj: @user
+
+= form_with(model: @user, local: true) do |f|
+  .row.mb-3
+    .col
+      = f.label :name
+    .col-10
+      = f.text_field :name, class: "form-control"
+  .row.mb-3
+    .col
+      = f.label :email
+    .col-10
+      = f.email_field :email, class: "form-control"
+  .row.mb-3
+    .col
+      = f.label :password
+    .col-10
+      = f.password_field :password, class: "form-control"
+  .row 
+    .col-12
+      .btn-group
+        = f.submit "Sign up", class: "btn btn-success"
+        = link_to 'Cancel', :back, class: "btn btn-outline-secondary"
