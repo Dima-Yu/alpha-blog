@@ -2,26 +2,4 @@
   h1
     |  List of articles 
   .row
-    - @articles.each do |article|
-      .col-xl-3
-        .card.article-card
-          .article-card--img
-            - # <img src="article.img" class="card-img-top" alt="">
-          .card-body
-            h5.card-title
-              = article.title
-            .author
-              i
-                | Author: 
-                = article.user.name
-              br
-              i
-                | Created: 
-                = time_ago_in_words(article.created_at)
-                |  ago
-            p.card-text.article-card--text
-              = article.description
-            .btn-group
-              = link_to "Show", article_path(article), class: "btn btn-outline-success"
-              = link_to "Edit", edit_article_path(article), class: "btn btn-outline-secondary"
-              = link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger"
+    = render "article"

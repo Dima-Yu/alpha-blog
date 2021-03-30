@@ -1,0 +1,10 @@
+.container.mt-3
+  h2 #{@user.name}'s info
+  .row
+    .col-12
+      .card.article-card
+        .card-body
+          h5.card-title Name: #{@user.name}
+  h2 #{@user.name}'s articles
+  .row 
+    = render "articles/article"
