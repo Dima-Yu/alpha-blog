@@ -19,5 +19,5 @@
   .row 
     .col-12
       .btn-group
-        = f.submit "Sign up", class: "btn btn-success"
+        = f.submit(@user.new_record? ? "Sign up" : "Update account", class: "btn btn-success")
         = link_to 'Cancel', :back, class: "btn btn-outline-secondary"
