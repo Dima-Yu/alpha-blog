@@ -9,7 +9,7 @@
         .author
           i
             | Author: 
-            = article.user.name
+            = link_to article.user.name, user_path(article.user)
           br
           i
             | Created: 

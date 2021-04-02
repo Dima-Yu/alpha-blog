@@ -3,3 +3,5 @@
     |  List of users 
   .row
     = render "user"
+    .digg_pagination
+      = will_paginate @users, :container => false
