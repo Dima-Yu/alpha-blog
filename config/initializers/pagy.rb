@@ -2,7 +2,6 @@
 # See https://ddnexus.github.io/pagy/extras/bootstrap
 require 'pagy/extras/bootstrap'
 
-
 # UIkit extra: Add nav helper and templates for UIkit pagination
 # See https://ddnexus.github.io/pagy/extras/uikit
 # require 'pagy/extras/uikit'
@@ -17,7 +16,6 @@ require 'pagy/extras/bootstrap'
 # (pagy*_nav_js, pagy*_combo_nav_js, and pagy_items_selector_js)
 # See https://ddnexus.github.io/pagy/extras#javascript
 # Rails.application.config.assets.paths << Pagy.root.join('javascripts')
-
 
 # I18n
 
@@ -47,7 +45,6 @@ require 'pagy/extras/bootstrap'
 #                 {locale: 'xyz',  # not built-in
 #                  filepath: 'path/to/pagy-xyz.yml',
 #                  pluralize: lambda{|count| ... } )
-
 
 # I18n extra: uses the standard i18n gem which is ~18x slower using ~10x more memory
 # than the default pagy internal i18n (see above)
