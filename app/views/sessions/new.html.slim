@@ -1,0 +1,21 @@
+.container.mt-3
+  .default-block
+    h2
+      | Login
+
+    = form_with(scope: :session, url: login_path, local: true) do |f|
+      .row.mb-3
+        .col
+          = f.label :email
+        .col-10
+          = f.email_field :email, class: "form-control"
+      .row.mb-3
+        .col
+          = f.label :password
+        .col-10
+          = f.password_field :password, class: "form-control"
+      .row 
+        .col-12
+          .btn-group
+            = f.submit "Log in", class: "btn btn-success"
+            = link_to 'Cancel', :back, class: "btn btn-outline-secondary"

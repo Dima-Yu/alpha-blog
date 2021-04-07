@@ -3,3 +3,4 @@
     |  List of articles 
   .row
     = render "article"
+    == pagy_bootstrap_nav(@pagy) if @pagy.pages > 1

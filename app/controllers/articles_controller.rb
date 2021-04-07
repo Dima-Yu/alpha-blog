@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   def show; end
 
   def index
-    @articles = Article.all
+    @pagy, @articles = pagy(Article.all, items: 8)
   end
 
   def new
@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = User.last
     if @article.save
       flash[:notice] = 'Article was created successfully.'
       redirect_to @article

@@ -21,7 +21,7 @@ gem 'slim'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 # Use pagy for pagination
-gem 'pagy', '~> 3.5'
+gem 'pagy'
 # Use rubocop as styleguide validator
 gem 'rubocop', '~> 1.12', require: false
 # Use Active Storage variant
