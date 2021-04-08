@@ -13,12 +13,20 @@ header.header
           li.nav-item
             = link_to "About", about_path, class: "nav-link"
           - if logged_in?
-            li.nav-item
-              = link_to current_user.name, user_path(current_user), class: "nav-link"
-            li.nav-item
-              = link_to "Logout", logout_path, class: "nav-link", method: :delete
-            li.nav-item
-              = link_to "Create new article", new_article_path, class: "btn btn-success"
+            li.nav-item.dropdown
+              a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" data-bs-toggle="dropdown" href="#" role="button" 
+                | #{current_user.name}
+              ul.dropdown-menu aria-labelledby="navbarDropdown" 
+                li.nav-item
+                  = link_to "Create new article", new_article_path, class: "nav-link text-dark"
+                li.nav-item
+                  = link_to "Show profile", user_path(current_user), class: "nav-link text-dark"
+                li.nav-item
+                  = link_to "Edit profile", edit_user_path(current_user), class: "nav-link text-dark"
+                li
+                  hr.dropdown-divider/
+                li.nav-item
+                  = link_to "Logout", logout_path, class: "nav-link text-dark", method: :delete
           - else
             li.nav-item
               = link_to "Log in", login_path, class: "nav-link"

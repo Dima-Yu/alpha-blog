@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[edit update show]
+  before_action :set_user, only: %i[edit update show destroy]
+  before_action :require_user, except: %i[index show]
+  before_action :require_same_user, only: %i[edit update destroy]
 
   def index
     @pagy, @users = pagy(User.all, items: 8)
@@ -35,6 +37,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy
+    session[:user_id] = nil
+    flash[:notice] = "Account #{@user.name} and all associated articles was deleted"
+    redirect_to root_path
+  end
+
   private
 
   def set_user
@@ -43,5 +52,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password)
+  end
+
+  def require_same_user
+    if current_user != @user
+      flash[:alert] = 'You can edit only Your own profile.'
+      redirect_to @user
+    end
   end
 end
