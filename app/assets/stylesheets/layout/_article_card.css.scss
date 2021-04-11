@@ -1,4 +1,4 @@
-.article-card {
+.default-card {
   margin-bottom: 20px;
   &--img {
     display: flex;
@@ -17,8 +17,11 @@
     margin-bottom: 20px;
   }
   &--text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
-  .author {
+  .subtitle {
     padding-bottom: 10px;
     font-size: 12px;
     color: #999;

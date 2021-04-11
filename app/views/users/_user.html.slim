@@ -1,14 +1,14 @@
 - @users.each do |user|
   .col-xl-3
-    .card.article-card
-      .article-card--img
+    .card.default-card
+      .default-card--img
         - # <img src="article.img" class="card-img-top" alt="">
       .card-body
         h5.card-title
           = user.name
-        .author
+        .subtitle
           i Joined: #{time_ago_in_words(user.created_at)} ago
-        p.card-text.article-card--text
+        p.card-text.default-card--text
           = pluralize(user.articles.count, "article")
         .btn-group.d-flex.justify-content-between
           = link_to "View profile", user_path(user), class: "btn btn-outline-success"
