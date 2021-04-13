@@ -15,7 +15,7 @@ header.header
           - if logged_in?
             li.nav-item.dropdown
               a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" data-bs-toggle="dropdown" href="#" role="button" 
-                | #{current_user.name}
+                | #{current_user.name} #{"(Admin)" if current_user.admin?}
               ul.dropdown-menu aria-labelledby="navbarDropdown" 
                 li.nav-item
                   = link_to "Create new article", new_article_path, class: "nav-link text-dark"

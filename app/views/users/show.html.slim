@@ -5,7 +5,7 @@
       .card.article-card
         .card-body
           h5.card-title Name: #{@user.name}
-          - if logged_in? &&  @user == current_user
+          - if logged_in? &&  (@user == current_user || current_user.admin?)
             = link_to "Delete", user_path(current_user), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"
   h2 #{@user.name}'s articles
   .row 
