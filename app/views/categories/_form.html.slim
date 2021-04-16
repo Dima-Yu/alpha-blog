@@ -1,0 +1,13 @@
+= render "shared/errors", obj: @category
+
+= form_with(model: @category, local: true) do |f|
+  .row.mb-3
+    .col
+      = f.label :name, "Category name"
+    .col-10
+      = f.text_field :name, class: "form-control"
+  .row 
+    .col-12
+      .btn-group
+        = f.submit class: "btn btn-success"
+        = link_to 'Cancel', :back, class: "btn btn-outline-secondary"
