@@ -1,0 +1,7 @@
+.container.mt-3
+  h2 Categories list 
+
+  ul
+    - @category.each do |c|
+      li 
+        = c.name
