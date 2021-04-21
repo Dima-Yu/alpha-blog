@@ -1,5 +1,5 @@
 ul
-  - @category.each do |c|
+  - @categories.each do |category|
     li 
-      = link_to category_path(c)
-        = c.name
+      = link_to category_path(category)
+        = category.name
