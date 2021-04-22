@@ -17,6 +17,9 @@
               | Created: 
               = time_ago_in_words(@article.created_at)
               |  ago
+          - if @article.categories.any?
+            .category-list
+              = render @article.categories
           .default-card--description
             = @article.description
           .default-card--text

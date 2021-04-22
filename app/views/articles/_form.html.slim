@@ -2,15 +2,17 @@
 
 = form_with(model: @article, local: true) do |f|
   .row.mb-3
-    / .col
-    /   = f.label :author, class: "col-form-label"
-    / .col-10
-    /   = f.text_field :name, class: "form-control"
-  .row.mb-3
     .col
       = f.label :title
     .col-10
       = f.text_field :title, class: "form-control"
+  .row.mb-3
+    .col
+      = f.label :category
+    .col-10
+      = f.collection_select(:category_ids, Category.all, :id, :name,
+      { prompt: "Make your selection from the list" }, { multiple: true, class: "form-select" } )
+
   .row.mb-3
     .col
       = f.label :description
