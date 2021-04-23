@@ -22,8 +22,21 @@
     white-space: nowrap;
   }
   .subtitle {
-    padding-bottom: 10px;
+    // padding-bottom: 10px;
     font-size: 12px;
     color: #999;
+  }
+  .category-list {
+    min-height: 25px;
+    .badge {
+      margin-right: 5px;
+      margin-bottom: 5px;
+      text-decoration: none;
+      transition: all .3s ease;
+      &:hover {
+        color: $white;
+        background-color: darken(#0dcaf0, 15%) !important;
+      }
+    }
   }
 }

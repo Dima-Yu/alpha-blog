@@ -15,6 +15,10 @@
             | Created: 
             = time_ago_in_words(article.created_at)
             |  ago
+        .category-list
+          - if article.categories.any?
+            .category-list
+              = render article.categories
         p.card-text.default-card--text
           = article.description
         .btn-group.d-flex.justify-content-between
