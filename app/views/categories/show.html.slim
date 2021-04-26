@@ -1,2 +1,17 @@
+/ .container.mt-3
+/   h2 All #{@category.name} articles
+/   .row 
+/     = render "articles/article"
+
 .container.mt-3
-  p Category: #{@category.name}
+  .d-flex.align-items-center
+    h2 All #{@category.name} articles
+    - if current_user.admin?
+      = link_to "Edit", edit_category_path(@category), class: "btn btn-outline-secondary btn-sm ms-3"
+  .row
+    .col-2
+      = render "categories/list"
+    .col
+      .row
+        = render "articles/article"
+      == pagy_bootstrap_nav(@pagy) if @pagy.pages > 1

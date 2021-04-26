@@ -1,16 +1,15 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
-  before_action :require_admin, except: %i[index show]
+  before_action :require_admin, except: %i[show]
 
   def new
     @category = Category.new
   end
 
-  def index
+  def show
     @categories = Category.all
+    @pagy, @articles = pagy(@category.articles, items: 8)
   end
-
-  def show; end
 
   def create
     @category = Category.new(category_params)
@@ -19,6 +18,17 @@ class CategoriesController < ApplicationController
       redirect_to @category
     else
       render 'new'
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @category.update(category_params)
+      flash[:notice] = 'Category name was updated'
+      redirect_to @category
+    else
+      render 'edit'
     end
   end
 
@@ -35,7 +45,7 @@ class CategoriesController < ApplicationController
   def require_admin
     unless logged_in? && current_user.admin?
       flash[:alert] = 'Only admins can perform that action'
-      redirect_to categories_path
+      redirect_to articles_path
     end
   end
 end
