@@ -1,4 +1,4 @@
 .list-group
-  - @categories.each do |category|
+  - category_list.each do |category|
     = link_to category_path(category), class: 'list-group-item list-group-item-action'
       = category.name
