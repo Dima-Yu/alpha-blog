@@ -2,3 +2,5 @@
   - category_list.each do |category|
     = link_to category_path(category), class: 'list-group-item list-group-item-action'
       = category.name
+  - if current_user.admin?
+    = link_to 'Add category', new_category_path, class: 'list-group-item list-group-item-action text-center list-group-item-success'
