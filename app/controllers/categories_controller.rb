@@ -6,7 +6,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @categories = Category.all
     @pagy, @articles = pagy(@category.articles, items: 8)
   end
 
