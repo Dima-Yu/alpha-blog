@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     if @category.save
       flash[:notice] = 'Category saved successfully'
-      redirect_to @category
+      redirect_to articles_path
     else
       render 'new'
     end

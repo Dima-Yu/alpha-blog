@@ -7,11 +7,6 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
                               password: 'password', admin: true)
   end
 
-  test 'should get index' do
-    get categories_url
-    assert_response :success
-  end
-
   test 'should get new' do
     sign_in_as(@admin_user)
     get new_category_url
@@ -24,7 +19,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
       post categories_url, params: { category: { name: 'Travel' } }
     end
 
-    assert_redirected_to category_url(Category.last)
+    assert_redirected_to articles_path
   end
 
   test 'should not create category if not admin' do
@@ -32,7 +27,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
       post categories_url, params: { category: { name: 'Travel' } }
     end
 
-    assert_redirected_to categories_url
+    assert_redirected_to articles_path
   end
 
   test 'should show category' do

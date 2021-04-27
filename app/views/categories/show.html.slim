@@ -6,7 +6,7 @@
 .container.mt-3
   .d-flex.align-items-center
     h2 All #{@category.name} articles
-    - if current_user.admin?
+    - if logged_in? && current_user.admin?
       = link_to "Edit", edit_category_path(@category), class: "btn btn-outline-secondary btn-sm ms-3"
   .row
     .col-2
